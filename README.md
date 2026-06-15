@@ -20,9 +20,9 @@ brew install octl
 
 ## Updating a formula
 
-Formula bumps are **automated and self-contained** — no cross-repo tokens. The source repo only builds and
-publishes its GitHub Release; this tap watches for it and updates itself. For `octl`,
-[`.github/workflows/update-octl.yml`](.github/workflows/update-octl.yml) runs hourly (and on demand via
-**Actions → update-octl → Run workflow**): it reads the latest [gotry-io/Octopus](https://github.com/gotry-io/Octopus)
-release, and if `Formula/octl.rb` is behind, rewrites its `version` / `url` / `sha256` and commits — pushing with
-the tap's own `GITHUB_TOKEN`.
+Formula bumps are **automated**. Each source repo's release workflow builds the artifact, publishes the GitHub
+Release, and pushes the updated `Formula/<name>.rb` straight here. For `octl`, that's
+[`.github/workflows/release.yml`](https://github.com/gotry-io/Octopus/blob/main/.github/workflows/release.yml)
+in [gotry-io/Octopus](https://github.com/gotry-io/Octopus) — triggered by pushing a `v*` tag — which rewrites
+the `version` / `url` / `sha256` fields below and commits. It pushes here using a `TAP_PUSH_TOKEN` secret on the
+source repo (a PAT with `contents:write` on this repo).
