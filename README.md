@@ -20,12 +20,8 @@ brew install octl
 
 ## Updating a formula
 
-Formulae are maintained in their source repos and copied here on each release. For `octl`, from a checkout of
-[gotry-io/Octopus](https://github.com/gotry-io/Octopus):
-
-```bash
-packaging/release.sh <version>                          # build the tarball, print url + sha256
-# attach the tarball to the GitHub release, then:
-cp packaging/homebrew/octl.rb /path/to/homebrew-tap/Formula/octl.rb
-cd /path/to/homebrew-tap && git commit -am "octl <version>" && git push
-```
+Formula bumps are **automated**. Each source repo's release workflow builds the artifact, publishes the GitHub
+Release, and pushes the updated `Formula/<name>.rb` here. For `octl`, that's
+[`.github/workflows/release.yml`](https://github.com/gotry-io/Octopus/blob/main/.github/workflows/release.yml)
+in [gotry-io/Octopus](https://github.com/gotry-io/Octopus) — triggered by pushing a `v*` tag — which updates
+the `version` / `url` / `sha256` fields below in place.
