@@ -1,11 +1,11 @@
 class Octl < Formula
   desc "Control and live-stream iOS Simulators and Android devices from your browser"
   homepage "https://github.com/gotry-io/Octopus"
-  version "0.7.5"
+  version "0.7.6"
   # Pre-built, self-contained tarball (octl + its resource bundles). Built and attached to the GitHub
   # release by Octopus's release workflow, which also bumps the version / url / sha256 below.
-  url "https://github.com/gotry-io/Octopus/releases/download/v0.7.5/octl-0.7.5-macos-arm64.tar.gz"
-  sha256 "5cf95bc80d50c8d1c82280bb68f630306b1f8263e28fb74932e2f12eec76baaa"
+  url "https://github.com/gotry-io/Octopus/releases/download/v0.7.6/octl-0.7.6-macos-arm64.tar.gz"
+  sha256 "3dba80c22b436f71edb5a0b0633e3f2399b1dc2552c1a81569499b7b8f63e788"
   license "MIT"
 
   depends_on arch: :arm64
