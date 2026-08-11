@@ -1,8 +1,8 @@
 cask "quotabar" do
-  version "0.0.6"
-  sha256 "6457a861488c7be323dcc290716a67d20e56cd4740b38fe5aeb453d408ad7edd"
+  version "0.0.7"
+  sha256 "29498c0591d085598c31e9fad257579897ed69a2a19d86b79411cfce1f9b389c"
 
-  url "https://github.com/gotry-io/Quota/releases/download/menubar-v0.0.6/QuotaBar-0.0.6-macos-arm64.zip"
+  url "https://github.com/gotry-io/Quota/releases/download/menubar-v0.0.7/QuotaBar-0.0.7-macos-arm64.zip"
   name "QuotaBar"
   desc "Keep coding-agent subscription quota visible from the macOS menu bar"
   homepage "https://quota.gotry.io"
@@ -11,15 +11,9 @@ cask "quotabar" do
   depends_on macos: :sonoma
 
   app "QuotaBar.app"
-  binary "#{appdir}/QuotaBar.app/Contents/Helpers/quotacli"
 
   zap trash: [
     "~/Library/Preferences/io.gotry.quotabar.plist",
     "~/Library/Saved Application State/io.gotry.quotabar.savedState",
   ]
-
-  caveats <<~EOS
-    QuotaBar now provides the macOS quotacli command. If the retired Formula is still installed,
-    remove it with `brew uninstall quotacli` before installing this Cask.
-  EOS
 end
