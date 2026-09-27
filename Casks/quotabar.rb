@@ -1,8 +1,8 @@
 cask "quotabar" do
-  version "0.2.16"
-  sha256 "e663b886949b98667443eb1f390d17af13b9845c1bb7d7736965b6cc3483b83f"
+  version "0.2.17"
+  sha256 "3da2152224c53d86204b1887550435571235a74bc66e473641445c8f2d2ce8d4"
 
-  url "https://github.com/gotry-io/Quota/releases/download/menubar-v0.2.16/QuotaBar-0.2.16-macos-arm64.zip"
+  url "https://github.com/gotry-io/Quota/releases/download/menubar-v0.2.17/QuotaBar-0.2.17-macos-arm64.zip"
   name "QuotaBar"
   desc "Keep coding-agent subscription quota visible from the macOS menu bar"
   homepage "https://quota.gotry.io"
