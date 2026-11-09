@@ -3,16 +3,16 @@
 class Nett < Formula
   desc "Self-hosted mesh network for your own machines"
   homepage "https://github.com/gotry-io/nett"
-  version "0.1.0"
+  version "0.1.1"
   license any_of: ["MIT", "Apache-2.0"]
 
   on_arm do
-    url "https://github.com/gotry-io/nett/releases/download/v0.1.0/nett-0.1.0-aarch64-apple-darwin.tar.gz"
-    sha256 "f6c4180374f999187823abf632b568acf1dc8ab0f4f9293e34a71b83926a8275"
+    url "https://github.com/gotry-io/nett/releases/download/v0.1.1/nett-0.1.1-aarch64-apple-darwin.tar.gz"
+    sha256 "0cd8f586bec81de3328f56aa5bb28e113019f93d823263a033effed9fb05afa7"
   end
   on_intel do
-    url "https://github.com/gotry-io/nett/releases/download/v0.1.0/nett-0.1.0-x86_64-apple-darwin.tar.gz"
-    sha256 "ac1a90dd7c979738f4e319e00f990e6b730e4fb6641b7076bc78a6319e32ad54"
+    url "https://github.com/gotry-io/nett/releases/download/v0.1.1/nett-0.1.1-x86_64-apple-darwin.tar.gz"
+    sha256 "c4857034949a08ed5947058a8850714b03019627f10394295f5041abb9c88ff1"
   end
 
   depends_on :macos
@@ -21,17 +21,14 @@ class Nett < Formula
     bin.install "nett"
   end
 
+  # 只用英文，与 Homebrew 社区一致：Homebrew 运行配方时固定使用英文区域设置，配方无法按用户的语言选择；
+  # 执行这些命令时，nett 自己的输出按系统语言显示
   def caveats
     <<~EOS
       To join the mesh as a native member (root is needed for the utun interface):
-        sudo nett mesh keys --dir "/Library/Application Support/nett"
-        # add the printed line to the site description, and put this node's desired.json there
-        sudo nett mesh install
+        sudo nett mesh install                             # prints the line to add to the site description
+        sudo nett mesh install --config <desired.json>     # after nett site build: starts the service
       After every `brew upgrade nett`, run `sudo nett mesh install` again: the service runs a root-only copy.
-
-      以原生成员加入组网（创建 utun 需要 root）：运行上面的命令；把输出的一行写进站点描述，把这个节点的
-      desired.json 放进同一个目录。每次 `brew upgrade nett` 之后再运行一次 `sudo nett mesh install`：
-      服务运行的是只有 root 能改的副本。
     EOS
   end
 
