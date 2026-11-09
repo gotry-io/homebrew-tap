@@ -7,6 +7,7 @@ dropping another `Formula/<name>.rb` here.
 
 ```bash
 brew install gotry-io/tap/octl    # control & live-stream iOS Simulators / Android devices
+brew install gotry-io/tap/nett    # self-hosted mesh network for your own machines
 # or:
 brew tap gotry-io/tap
 brew install octl
@@ -17,6 +18,7 @@ brew install octl
 | Formula | Description | Source |
 | --- | --- | --- |
 | `octl` | Control and live-stream iOS Simulators and Android devices from your browser | [gotry-io/Octopus](https://github.com/gotry-io/Octopus) |
+| `nett` | Self-hosted mesh network for your own machines | [gotry-io/nett](https://github.com/gotry-io/nett) |
 
 ## Updating a formula
 
