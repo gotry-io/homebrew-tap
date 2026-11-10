@@ -3,16 +3,16 @@
 class Nett < Formula
   desc "Self-hosted mesh network for your own machines"
   homepage "https://github.com/gotry-io/nett"
-  version "0.1.1"
+  version "0.1.2"
   license any_of: ["MIT", "Apache-2.0"]
 
   on_arm do
-    url "https://github.com/gotry-io/nett/releases/download/v0.1.1/nett-0.1.1-aarch64-apple-darwin.tar.gz"
-    sha256 "0cd8f586bec81de3328f56aa5bb28e113019f93d823263a033effed9fb05afa7"
+    url "https://github.com/gotry-io/nett/releases/download/v0.1.2/nett-0.1.2-aarch64-apple-darwin.tar.gz"
+    sha256 "98e2609088bebe506294509805f4cfb09af0d106bb57e5654dbef6038af3ff32"
   end
   on_intel do
-    url "https://github.com/gotry-io/nett/releases/download/v0.1.1/nett-0.1.1-x86_64-apple-darwin.tar.gz"
-    sha256 "c4857034949a08ed5947058a8850714b03019627f10394295f5041abb9c88ff1"
+    url "https://github.com/gotry-io/nett/releases/download/v0.1.2/nett-0.1.2-x86_64-apple-darwin.tar.gz"
+    sha256 "9b3fad5c7e549f6d26fe51787d0d9a0fe3c71557b26e887ccdf737a8f45a5dd1"
   end
 
   depends_on :macos
@@ -26,9 +26,10 @@ class Nett < Formula
   def caveats
     <<~EOS
       To join the mesh as a native member (root is needed for the utun interface):
-        sudo nett mesh install                             # prints the line to add to the site description
-        sudo nett mesh install --config <desired.json>     # after nett site build: starts the service
-      After every `brew upgrade nett`, run `sudo nett mesh install` again: the service runs a root-only copy.
+        sudo nett mesh install    # prints the line to add to the site description
+        nett site build           # in the site directory, ~/.config/nett by default
+        sudo nett mesh install    # finds this machine's desired state there and starts the service
+      Run `sudo nett mesh install` again after every `nett site build` and `brew upgrade nett`.
     EOS
   end
 
