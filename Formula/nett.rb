@@ -3,16 +3,16 @@
 class Nett < Formula
   desc "Self-hosted mesh network for your own machines"
   homepage "https://github.com/gotry-io/nett"
-  version "0.3.14"
+  version "0.3.15"
   license any_of: ["MIT", "Apache-2.0"]
 
   on_arm do
-    url "https://github.com/gotry-io/nett/releases/download/v0.3.14/nett-0.3.14-aarch64-apple-darwin.tar.gz"
-    sha256 "afcd5e62a4a59aad61b564478bbaf0038d80a11548c6135a383f1db0b4ec001c"
+    url "https://github.com/gotry-io/nett/releases/download/v0.3.15/nett-0.3.15-aarch64-apple-darwin.tar.gz"
+    sha256 "218ca276f7ef0d1b70181afc4619df8ee408ebb0d81d9ace58d621d7302885e5"
   end
   on_intel do
-    url "https://github.com/gotry-io/nett/releases/download/v0.3.14/nett-0.3.14-x86_64-apple-darwin.tar.gz"
-    sha256 "a76978228c050c4eac5180c829ea0db4b62a2471e7d924761d32046521719799"
+    url "https://github.com/gotry-io/nett/releases/download/v0.3.15/nett-0.3.15-x86_64-apple-darwin.tar.gz"
+    sha256 "58029e138bec8b1ffcd937e91be1a7467d7c79fc31fe05ac121d3d18333aa5f2"
   end
 
   depends_on :macos
